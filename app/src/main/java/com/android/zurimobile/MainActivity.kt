@@ -1,9 +1,9 @@
 package com.android.zurimobile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,18 +12,21 @@ class MainActivity : AppCompatActivity() {
 
         val minus: Button = findViewById(R.id.button1)
         val plus: Button = findViewById(R.id.button2)
-        var count: TextView =findViewById(R.id.textView)
-        count.text = "0"
+        val number: TextView = findViewById(R.id.textView)
+        var textView = 0
 
         plus.setOnClickListener{
-            count +=1
-            count.text = count.toString()
+            textView++
+            number.text = textView.toString()
         }
 
         minus.setOnClickListener {
-            count -=1
-            count.text = count.toString()
+            textView--
+            number.text = textView.toString()
         }
+
+
+
     }
 }
 
